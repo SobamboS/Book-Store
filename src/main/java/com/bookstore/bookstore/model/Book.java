@@ -1,11 +1,15 @@
 package com.bookstore.bookstore.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity(name="book")
+@Data
+@NoArgsConstructor
 public class Book{
 
     @Id
@@ -26,6 +30,6 @@ public class Book{
     private int numberOfInstance;
 
     @ManyToMany(mappedBy="borrowedBooks")
-    private List<_User> user;
+    private List<User> user;
 
 }

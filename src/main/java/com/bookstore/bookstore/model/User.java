@@ -1,14 +1,18 @@
 package com.bookstore.bookstore.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity(name="user")
-public class _User{
+@Entity(name="_user")
+@Data
+@NoArgsConstructor
+public class User{
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="User_Id")
     private long id;
 
@@ -33,5 +37,13 @@ public class _User{
     )
     private List<Book> borrowedBooks;
 
+    public User(long id,String name,String lastname,String password,String email,List<Book> borrowedBooks){
+        this.id=id;
+        this.name=name;
+        this.lastname=lastname;
+        this.password=password;
+        this.email=email;
+        this.borrowedBooks=borrowedBooks;
+    }
 
 }

@@ -1,9 +1,13 @@
 package com.bookstore.bookstore.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity(name="BorrowedBooks")
+@Data
+@NoArgsConstructor
 public class BorrowedBooks{
 
     @Id
@@ -15,7 +19,7 @@ public class BorrowedBooks{
     private Book book;
 
     @Column(name="user_id")
-    private _User user;
+    private User user;
 
 
 
